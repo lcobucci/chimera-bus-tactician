@@ -167,7 +167,7 @@ final class RegisterServices implements CompilerPassInterface
      *
      * @return Reference[]
      */
-    private function prioritiseMiddlewares(array $middlewares): array
+    private static function prioritiseMiddlewares(array $middlewares): array
     {
         krsort($middlewares);
 
@@ -296,7 +296,7 @@ final class RegisterServices implements CompilerPassInterface
         string $handlerId,
         array $handlers
     ): Reference {
-        $id = $handlerId . '.handler';
+        $id = $handlerId . '.locator';
 
         $container->setDefinition(
             $id,
